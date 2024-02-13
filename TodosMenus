@@ -1,0 +1,7 @@
+public class TodosMenus{
+
+  public void menuOpcoes(){
+    System.out.println("1.Cadastrar clientes\n2.Efectuar pagamento\n3.Listar clientes");
+
+  }
+}
