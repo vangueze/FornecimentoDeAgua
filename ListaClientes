@@ -4,6 +4,9 @@ public class ListaClientes extends Cadastro{
 
   public void visualizarClientes(){
     System.out.println("*************************************");
-    System.out.println("Nome : "+cadastro.nome+"\nApelido : "+cadastro.apelido+"\nBairro : "+cadastro.bairro+"\nRua_Avenida : "+cadastro.rua_avenida+"
-    +"\nCidade : "+cadastro.cidade+"\nContrato : "+cadastro.contrato);
+    System.out.println("Nome : "+cadastro.nome+"\nApelido : "+cadastro.apelido+"\nBairro : "+cadastro.bairro+"
+    +"\nRua_Avenida : "+cadastro.rua_avenida+"\nCidade : "+cadastro.cidade+"\nContrato : "+cadastro.contrato);
     System.out.println("*************************************");
+
+  }
+}
