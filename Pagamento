@@ -1,0 +1,51 @@
+import java.util.Scanner;
+
+  public class Pagamento{
+
+    Scanner s = new Scanner (System.in);
+
+    final float TAXA = 400;
+    float leituraAnterior = 0, leituraActual = 0;
+    double consumo = 0, multa = 0, valorPagar = 0;
+    int contrato;
+
+    //Cadastro cadastro = new Cadastro();
+
+    public void leituraContador(){
+      do{
+        int cont = 0;
+
+        System.out.println("Introduza o numero de contrato : ");
+        this.contrato = s.nextInt();
+        System.out.println("Introduza a leitura anterior : ");
+        this.leituraAnterior = s.nextFloat();
+        System.out.println("Introduza a leitura actual : ");
+        this.leituraActual = s.nextFloat();
+
+        if(leituraActual < leituraAnterior){
+          System.out.println("Leitura invalida! Introduza um valor maior ou igual a "+leituraAnterior);
+        }
+        cont++;
+      }while(leituraActual < leituraAnterior);
+    }
+
+    public double calculoFactura(){
+      consumo = leituraActual - leituraAnterior;
+      return consumo;
+    }
+
+    public double calculoMulta(double consumo){
+      multa = (consumo - 23) * 50;
+      valorPagar = multa + TAXA;
+      return valorPagar;
+    }
+
+    public void factura(){
+      if(consumo > 23){
+        valorPagar = calculoMulta(consumo);
+        System.out.println("Multa : "+multa+"\nValor a pagar : "+valorPagar);
+      }else{
+        valorPagar = TAXA;
+        System.out.println("Consumo : "+consumo+"\nMulta : "+multa+"\nValor a pagar : "+valorPagar);
+      }
+    
