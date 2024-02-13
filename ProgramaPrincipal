@@ -1,0 +1,39 @@
+import java.util.Scanner;
+
+  public class ProgramaPrincipal{
+    public static void main(String[]args){
+
+    Scanner s = new Scanner(System.in);
+
+    Cadastro clienteCad = new Cadastro();
+    Pagamento clientePag = new Pagamento();
+    ListaClientes lc = new ListaClientes();
+    TodosMenus tm = new TodosMenus();
+
+    byte opcao;
+
+    tm.menuOpcoes();
+
+    do{
+      System.out.println("Escolha uma opcao : ");
+      opcao = s.nextInt();
+
+      if(opcao == 1){
+        clienteCad.cadastrar();
+      }else if(opcao == 2){
+              clientePag.leituraContador();
+              double consumo = clientePag.calculoFactura();
+              clientePag.calculoMulta(Consumo);
+              clientePag.factura();
+            }else if(opcao == 3){
+                    lc.visualizarClientes();
+            }
+        System.out.println("Pretende continuar ? ");
+        opcao = (char)s.next().charAt(0);
+
+        if(opcao == 's'){
+          tm.menuOpcoes();
+        }
+      }while(opcao == 's');
+    }
+}
